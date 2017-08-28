@@ -1,0 +1,100 @@
+14
+14
+15
+15
+15
+16
+login pass!
+downloading
+download time up
+download table down
+2017-08-24
+2017-08-25
+2017-08-20
+2017-08-21
+2017-08-22
+2017-08-23
+gen html done!
+send mail done!
+16
+16
+17
+17
+17
+18
+18
+18
+19
+19
+19
+20
+20
+20
+21
+21
+21
+22
+22
+22
+23
+23
+23
+00
+00
+00
+01
+01
+01
+02
+02
+02
+03
+03
+03
+04
+04
+04
+05
+05
+05
+06
+06
+06
+07
+07
+07
+08
+08
+08
+09
+09
+09
+10
+10
+10
+11
+11
+11
+12
+12
+12
+13
+13
+13
+14
+14
+14
+15
+15
+15
+16
+login pass!
+downloading
+download time up
+download table down
+Traceback (most recent call last):
+  File "send_RP.py", line 48, in <module>
+    send_RP()
+  File "send_RP.py", line 27, in send_RP
+    file_name = rename_file(t_path)[0]
+IndexError: list index out of range

@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+
+if(@ARGV < 3)
+{
+  print "please use as $0 <To Mail Address> <Mail Subject> <Mail Content File>";
+  exit 1;
+}
+
+my $TO_MAIL_LIST=$ARGV[0];
+my $NOTIFY_MAIL_SUBJECT=$ARGV[1];
+my $INSTALL_LOAD_NOTIFY=$ARGV[2];
+my $CC_MAIL_LIST=$ARGV[3];
+
+
+        open MAIL,"| /usr/lib/sendmail -t -oi -F\"ET Test Report\"";
+        print MAIL "To: ${TO_MAIL_LIST}\n";
+        print MAIL "Cc:${CC_MAIL_LIST}\n";
+        print MAIL "X-Priority: High\n";
+        print MAIL "X-MSMail-Priority: High\n";
+        print MAIL "Importance: High\n";
+        print MAIL "Subject: LTE CPLN Entity Test Report - ${NOTIFY_MAIL_SUBJECT}\n";
+        print MAIL "Content-type: text/html\n\n";
+        open (FD, "${INSTALL_LOAD_NOTIFY}") || print "error open ${INSTALL_LOAD_NOTIFY}";
+        while(<FD>){
+           print MAIL $_;
+           #print $_;
+        }
+        close FD;
+        close MAIL;
