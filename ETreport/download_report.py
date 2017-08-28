@@ -37,7 +37,7 @@ class download_report():
                 driver.find_element_by_css_selector('.btn.btn-rep.dropdown-toggle').click()
                 driver.find_element_by_css_selector('.btn.btn-rep[ng-click="downloadCSV()"]').click()
                 print "downloading"
-                sleep(60)
+                sleep(30)
             print "download time up"
             return True
         except exceptions.TimeoutException:

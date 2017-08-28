@@ -44,7 +44,7 @@ class table_html:
         full_html_name = '%s.html' % html_name
         with open(full_html_name, 'w') as f:
             f.write(gen_html)
-        return full_html_name
+        return gen_html
 
     def open_file(self, fname, ftype = "csv"):
         if ftype == "csv":
@@ -127,7 +127,7 @@ class table_html:
 
 
         for count_key in count_dic:
-            print count_key
+            #print count_key
             for tester_key, value in count_dic[count_key].items():
                 if tester_key not in tester_info.keys():
                     output_bodies = "<tr>"+ "<td>" + tester_key + "</td>"
