@@ -28,7 +28,7 @@ def chrome_brower(headless=False, proxy=False, download_path=""):
 
 
 def firefox_browser(proxy=False, download_path=""):
-    profile_dir = "/home/xbu/.mozilla/firefox/w4lpdp4s.default"
+    profile_dir = "/home/xbu/git/py_project/common/firefox.default"
     profile = webdriver.FirefoxProfile(profile_dir)
     profile.set_preference("extensions.firebug.allPagesActivation", "on")
 
