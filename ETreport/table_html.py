@@ -1,5 +1,5 @@
 from collections import Counter
-from time import gmtime, strftime
+from time import strftime, localtime
 from html import html
 import xlrd
 import os
@@ -22,7 +22,7 @@ class table_html:
             table_path = filepath.split('*')[0]
             name_lst = os.listdir(table_path)
             file_lst = [table_path + m for m in name_lst if ("xls"in m) or ("csv" in m) ]
-            html_name = self.html_path + 'Total_' + strftime("%Y-%m-%d-%H-%M", gmtime())
+            html_name = self.html_path + 'Total_' + strftime("%Y-%m-%d-%H-%M",localtime())
         else:
             file_lst.append(filepath)
             html_name = self.html_path+filepath.split('/')[-1].split('.')[0]
@@ -143,7 +143,7 @@ class table_html:
         for key, value in tester_info.items():
             body = body + value
         output_bodies = body + sum_value +"</tr>"
-        now_time = strftime('%Y-%m-%d %H:%M:%S',gmtime())
+        now_time = strftime('%Y-%m-%d %H:%M:%S', localtime())
         return html(now_time,head, output_bodies)
 
 

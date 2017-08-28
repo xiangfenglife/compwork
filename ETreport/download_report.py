@@ -5,7 +5,7 @@ from selenium.common import exceptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from common import pre_config
+from py_project.common import pre_config
 
 
 class download_report():
@@ -55,8 +55,8 @@ class download_report():
             else:
                 self.close_page()
             if login_time == 9:
-                login_stat = "login failure"
-                return  False
+                print "login failure"
+                return False
 
         for load_data_time in range(10):
             if self.download_excel() is True:
@@ -65,7 +65,7 @@ class download_report():
                 self.driver.refresh()
                 sleep(5)
             if load_data_time == 9:
-                load_data_stat = "load data failure"
+                print "load data failure"
                 return False
         return True
 
